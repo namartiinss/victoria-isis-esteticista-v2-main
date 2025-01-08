@@ -356,7 +356,8 @@ h4 {
   height: 680px;
 }
 
-.text-about-me {
+.text-about-me,
+.text-intro {
   color: #fff;
   font-family: Poppins;
   font-size: 24px;
@@ -364,9 +365,6 @@ h4 {
   padding: 0;
   font-weight: 300;
   line-height: normal;
-}
-.text-about  p ~ p{
-  margin-bottom: 20px;
 }
 
 .head-line-txt {
@@ -429,10 +427,10 @@ p {
   background-color: #f3f5e7;
 }
 
-.p-large,
-p {
+blockquote, .p-large {
   text-align: left;
   font-size: 20px;
+  font-family: poppins;
   color: #5f6b55;
 }
 
@@ -453,6 +451,7 @@ footer {
 .footer-title p {
   font-family: Tenor sans;
   font-size: 52px;
+  color: #5f6b55;
   margin-bottom: 40px;
 }
 
