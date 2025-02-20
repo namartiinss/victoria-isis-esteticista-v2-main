@@ -1,136 +1,122 @@
-const tabMenuContainer = document.querySelector(".tab-menu");
-const swiperContainers = document.querySelectorAll(".swiper");
+// Função para inicializar os Swipers dentro de um contêiner específico
+function initializeSwipers(containerId) {
+  const container = document.querySelector(`#${containerId}`);
+  if(container){
 
-// Inicialize os Swipers
-const swipers = {
-  aparelhos: new Swiper('.swiper.aparelhos', {
-    pagination: {
-      el: '.swiper.aparelhos .swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper.aparelhos .swiper-button-next',
-      prevEl: '.swiper.aparelhos .swiper-button-prev',
-    },
-    breakpoints: {
-      1400: { slidesPerView: 3.1 },
-      1200: { slidesPerView: 2.5 },
-      1000: { slidesPerView: 2.2 },
-      700: { slidesPerView: 1.5 },
-      0: { spaceBetween: 20, slidesPerView: 1.2 },
-    },
-  }),
+    const swiperContainers = container.querySelectorAll(".swiper");
   
-  facial: new Swiper('.swiper.facial', {
-    pagination: {
-      el: '.swiper.facial .swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper.facial .swiper-button-next',
-      prevEl: '.swiper.facial .swiper-button-prev',
-    },
-    breakpoints: {
-      1400: { slidesPerView: 3.1 },
-      1200: { slidesPerView: 2.5 },
-      1000: { slidesPerView: 2.2 },
-      700: { slidesPerView: 1.5 },
-      0: { spaceBetween: 20, slidesPerView: 1.2 },
-    },
-  }),
-
-  massagens: new Swiper('.swiper.massagens', {
-    pagination: {
-      el: '.swiper.massagens .swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper.massagens .swiper-button-next',
-      prevEl: '.swiper.massagens .swiper-button-prev',
-    },
-    breakpoints: {
-      1400: { slidesPerView: 3.1 },
-      1200: { slidesPerView: 2.5 },
-      1000: { slidesPerView: 2.2 },
-      700: { slidesPerView: 1.5 },
-      0: { spaceBetween: 20, slidesPerView: 1.2 },
-    },
-  }),
-};
-
-
-// Função para ativar o botão clicado
-function setActiveButton(clickedButton) {
-  document.querySelectorAll(".tab-menu button").forEach((button) => {
-    button.classList.toggle("active", button === clickedButton);
-  });
-}
-
-// Função para alternar a visibilidade dos Swipers
-function toggleVisibility(targetClass) {
-  swiperContainers.forEach((swiper) => {
-    swiper.classList.toggle("hidden", !swiper.classList.contains(targetClass));
-  });
-
-  // Atualize o Swiper visível para garantir funcionalidade
-  const activeSwiper = Object.values(swipers).find(
-    (swiperInstance) =>
-      swiperInstance.el.classList.contains(targetClass) &&
-      !swiperInstance.el.classList.contains("hidden")
-  );
-  if (activeSwiper) {
-    activeSwiper.update();
+    // Inicialização dos Swipers
+    const swipers = {
+      aparelhos: new Swiper(`#${containerId} .swiper.aparelhos`, {
+        pagination: {
+          el: `#${containerId} .swiper.aparelhos .swiper-pagination`,
+          clickable: true,
+        },
+        navigation: {
+          nextEl: `#${containerId} .swiper.aparelhos .swiper-button-next`,
+          prevEl: `#${containerId} .swiper.aparelhos .swiper-button-prev`,
+        },
+        breakpoints: {
+          1400: { slidesPerView: 3.1 },
+          1200: { slidesPerView: 2.5 },
+          1000: { slidesPerView: 2.2 },
+          700: { slidesPerView: 1.5 },
+          0: { spaceBetween: 20, slidesPerView: 1.2 },
+        },
+      }),
+      facial: new Swiper(`#${containerId} .swiper.facial`, {
+        pagination: {
+          el: `#${containerId} .swiper.facial .swiper-pagination`,
+          clickable: true,
+        },
+        navigation: {
+          nextEl: `#${containerId} .swiper.facial .swiper-button-next`,
+          prevEl: `#${containerId} .swiper.facial .swiper-button-prev`,
+        },
+        breakpoints: {
+          1400: { slidesPerView: 3.1 },
+          1200: { slidesPerView: 2.5 },
+          1000: { slidesPerView: 2.2 },
+          700: { slidesPerView: 1.5 },
+          0: { spaceBetween: 20, slidesPerView: 1.2 },
+        },
+      }),
+      massagens: new Swiper(`#${containerId} .swiper.massagens`, {
+        pagination: {
+          el: `#${containerId} .swiper.massagens .swiper-pagination`,
+          clickable: true,
+        },
+        navigation: {
+          nextEl: `#${containerId} .swiper.massagens .swiper-button-next`,
+          prevEl: `#${containerId} .swiper.massagens .swiper-button-prev`,
+        },
+        breakpoints: {
+          1400: { slidesPerView: 3.1 },
+          1200: { slidesPerView: 2.5 },
+          1000: { slidesPerView: 2.2 },
+          700: { slidesPerView: 1.5 },
+          0: { spaceBetween: 20, slidesPerView: 1.2 },
+        },
+      }),
+    };
+  
+    // Função para alternar visibilidade dos Swipers
+    function toggleVisibility(targetClass) {
+      swiperContainers.forEach((swiper) => {
+        swiper.classList.toggle("hidden", !swiper.classList.contains(targetClass));
+      });
+  
+      // Atualizar o Swiper visível
+      const activeSwiper = Object.values(swipers).find(
+        (swiperInstance) =>
+          swiperInstance.el.classList.contains(targetClass) &&
+          !swiperInstance.el.classList.contains("hidden")
+      );
+      if (activeSwiper) activeSwiper.update();
+    }
+  
+    // Adicionar evento de clique ao menu de abas
+    const tabMenuContainer = container.querySelector(".tab-menu");
+    tabMenuContainer.addEventListener("click", (event) => {
+      if (event.target.tagName === "BUTTON") {
+        const clickedButton = event.target;
+  
+        // Ativar o botão clicado
+        tabMenuContainer.querySelectorAll("button").forEach((button) => {
+          button.classList.toggle("active", button === clickedButton);
+        });
+  
+        // Alternar visibilidade dos Swipers
+        const targetClass = clickedButton.innerText.trim().toLowerCase();
+        toggleVisibility(targetClass);
+  
+        // Alternar visibilidade dos botões de navegação
+        container.querySelectorAll(".buttons-left-right").forEach((el) => {
+          el.classList.toggle("hidden", !el.classList.contains(targetClass));
+        });
+      }
+    });
+  
+    // Adicionar eventos aos botões de navegação
+    function addNavigationListeners(swiperClass) {
+      const leftButton = container.querySelector(`.buttons-left-right.${swiperClass} .left`);
+      const rightButton = container.querySelector(`.buttons-left-right.${swiperClass} .right`);
+      const swiperInstance = swipers[swiperClass];
+  
+      if (leftButton && rightButton && swiperInstance) {
+        leftButton.addEventListener("click", () => swiperInstance.slidePrev());
+        rightButton.addEventListener("click", () => swiperInstance.slideNext());
+      }
+    }
+  
+    addNavigationListeners("aparelhos");
+    addNavigationListeners("facial");
+    addNavigationListeners("massagens");
   }
 }
 
-function changeButtonActiveModals(value){
-  console.log(value)
-  document.querySelectorAll(".buttons-left-right").forEach((el) => {
-    if(el.classList.contains(value)){
-      el.classList.remove("hidden")
-    }else{
-      el.classList.add("hidden")
-    }
-  })
-}
-// Eventos do menu de abas
-tabMenuContainer.addEventListener("click", (event) => {
-  if (event.target.tagName === "BUTTON") {
-    const clickedButton = event.target;
-    setActiveButton(clickedButton);
-    const targetClass = clickedButton.innerText.trim().toLowerCase();
-    toggleVisibility(targetClass);
-    changeButtonActiveModals(targetClass)
-  }
-});
+// Inicializar os carrosséis
 
-
-// Controle do menu mobile
-const menuMobile = document.querySelector(".desktopHidden");
-document.querySelectorAll(".menuActive").forEach((el) => {
-  el.addEventListener("click", () => {
-    menuMobile.classList.toggle("active");
-  });
-});
-
-// Função para navegar no swiper
-function addNavigationListener(swiperClass, direction) {
-  const directionClass = direction === "prev" ? ".left" : ".right";
-  const swiperElement = document.querySelector(`.swiper.${swiperClass}`).swiper;
-
-  document.querySelector(`.buttons-left-right.${swiperClass} ${directionClass}`).addEventListener("click", () => {
-    if (direction === "prev") {
-      swiperElement.slidePrev(); // Navega para o slide anterior
-    } else {
-      swiperElement.slideNext(); // Navega para o próximo slide
-    }
-  });
-}
-
-// Adicionar ouvintes de navegação para os três swipers
-addNavigationListener("aparelhos", "prev");
-addNavigationListener("aparelhos", "next");
-addNavigationListener("facial", "prev");
-addNavigationListener("facial", "next");
-addNavigationListener("massagens", "prev");
-addNavigationListener("massagens", "next");
+initializeSwipers("carrossel1");
+initializeSwipers("carrossel2");
+initializeSwipers("nossos-servicos");
