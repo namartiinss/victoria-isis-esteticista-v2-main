@@ -1,0 +1,125 @@
+.melhor-versao h2,
+.melhor-versao h1{
+    text-align: center;
+}
+.melhor-versao h2{
+    font-size: 20px;
+    margin-top: 80px;
+    font-weight: 400;
+    color: #666;
+}
+.melhor-versao h1{
+    font-size: 70px;
+    margin-top: 12px;
+    margin-bottom: 60px;
+    font-family: tenor sans;
+}
+
+.div-section {
+    background-color: #EEF1E0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 60px 0;
+}
+
+.div-section p{
+    font-size: 40px;
+    color: #5F6B55;
+}
+
+.perguntas-frequentes {
+    margin-top: 120px;
+}
+
+.perguntas-frequentes .title{
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.perguntas-frequentes .container{
+    display: flex;
+    gap: 20px;
+}
+.perguntas-frequentes .card{
+    border: 1px solid #9CA696;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+
+    /* Garantir tamanho uniforme */
+    flex-grow: 1; /* Faz os cards crescerem uniformemente */
+    min-height: 300px; /* Altura mínima */
+    height: auto; /* Para adaptar conteúdo */
+    box-sizing: border-box; /* Inclui padding no cálculo da altura */
+}
+.perguntas-frequentes .card h2{
+    color: #5F6B55;
+    font-size: 20px;
+    font-weight: 600;
+    max-width: 386px;
+    margin: 0 auto;
+    margin-top: 12px;
+}
+
+.perguntas-frequentes .card  p{
+    max-width: 386px;
+    margin: 0 auto;
+    margin-top: 12px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #5F6B55;
+}
+
+.mt-20{
+    margin-top: 20px;
+}
+footer{
+    margin-top: 70px;
+}
+.melhor-versao h1{
+    width: 100%;
+}
+.description{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.description h5{
+    font-size: 28px;
+}
+@media(max-width: 1100px){
+    .perguntas-frequentes .container{
+        flex-direction: column;
+    }
+    .perguntas-frequentes .card{
+        width: 100%;
+    }
+    .melhor-versao h1{
+        width: 100%;
+    }
+}
+
+@media(max-width:  768px){
+    .perguntas-frequentes{
+        margin-top: 80px;
+    }
+
+    .div-section p{
+        font-size: 24px;
+    }
+    .melhor-versao h1{
+        font-size: 32px;
+        width: 100%;
+    }
+    .melhor-versao h2{
+        margin-top: 20px;
+    }
+}
+

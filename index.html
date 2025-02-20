@@ -5,9 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Victoria Isis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <link rel="icon" type="image/png" href="./assets/favicon.svg" />
   <link rel="stylesheet" href="/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -17,17 +26,20 @@
         <div class="navbar-flex">
           <ul>
             <div>
-              <a href="https://victoria-isis-esteticista.vercel.app/" role="button" class="slider-menu">Página Inicial</a>
+              <a href="https://victoria-isis-esteticista.vercel.app/" role="button" class="slider-menu">Página
+                Inicial</a>
             </div>
             <div>
-              <a href="https://victoria-isis-esteticista.vercel.app/#nossos-servicos" role="button" class="slider-menu">Nossos Serviços</a>
+              <a href="https://victoria-isis-esteticista.vercel.app/#nossos-servicos" role="button"
+                class="slider-menu">Nossos Serviços</a>
             </div>
             <div>
               <img class="size-logo" src="./assets/logotipo-principal.png"
                 alt="Logotipo da Clínica de Estética Victoria Isis" />
             </div>
             <div>
-              <a href="https://victoria-isis-esteticista.vercel.app/#sobre-mim" role="button" class="slider-menu">Sobre Mim</a>
+              <a href="https://victoria-isis-esteticista.vercel.app/#sobre-mim" role="button" class="slider-menu">Sobre
+                Mim</a>
             </div>
             <div>
               <a href="#" role="button" class="slider-menu">Perguntas Frequentes</a>
@@ -98,7 +110,7 @@
           <button class="menu">Massagens</button>
         </div>
 
-        <div class="container-carrossel">
+        <div class="container-carrossel" id="container1">
           <!-- Swipers -->
           <div class="swiper-wrapper-container">
             <div class="swiper aparelhos">
@@ -110,8 +122,7 @@
                     </div>
                     <div class="description">
                       <h5>
-                        Alívio • Eliminação de toxinas • Melhora da circulação • Redução de inchaços • Apoio à saúde da
-                        Pele
+                        R$70,00
                       </h5>
                     </div>
                   </div>
@@ -313,7 +324,7 @@
           </button>
         </div>
         <div class="container-morePacks">
-          <a href="#" role="button" class="btn-morePacks">Quero saber mais sobre os serviços</a>
+          <a href="./nossos-servicos.html" role="button" class="btn-morePacks">Quero saber mais sobre os serviços</a>
         </div>
       </div>
     </div>
