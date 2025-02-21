@@ -3,33 +3,20 @@
     text-align: center;
 }
 .melhor-versao h2{
-<<<<<<< HEAD
     font-size: 20px;
     margin-top: 80px;
     font-weight: 400;
     color: #666;
-=======
-    font-size: 40px;
-    margin-top: 80px;
-    font-weight: 300;
->>>>>>> 46268e2df3a5c2fd9703485590ba28e29ed195eb
 }
 .melhor-versao h1{
     font-size: 70px;
     margin-top: 12px;
-<<<<<<< HEAD
     margin-bottom: 60px;
     font-family: tenor sans;
 }
 
 .div-section {
     background-color: #EEF1E0;
-=======
-}
-
-.div-section {
-    background-color: #9CA69633;
->>>>>>> 46268e2df3a5c2fd9703485590ba28e29ed195eb
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +26,6 @@
 
 .div-section p{
     font-size: 40px;
-<<<<<<< HEAD
     color: #5F6B55;
 }
 
@@ -47,25 +33,17 @@
     margin-top: 120px;
 }
 
-=======
-}
-
-
-.perguntas-frequentes {
-    margin-top: 120px;
-}
->>>>>>> 46268e2df3a5c2fd9703485590ba28e29ed195eb
 .perguntas-frequentes .title{
     color: #333333;
     margin-bottom: 20px;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 46268e2df3a5c2fd9703485590ba28e29ed195eb
 .perguntas-frequentes .container{
     display: flex;
     gap: 20px;
+}
+.div-section p{
+    font-size: 32px;
+    text-align: center;
 }
 .perguntas-frequentes .card{
     border: 1px solid #9CA696;

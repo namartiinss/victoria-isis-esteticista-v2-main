@@ -85,6 +85,13 @@ ul {
   font-size: 18px;
   padding: 16px 20px;
 }
+.cards_container{
+  display: flex;
+  gap: 20px;
+}
+#perguntas-frequentes .title{
+ margin-bottom: 40px;
+}
 .content {
   gap: 20px;
 }
